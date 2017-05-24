@@ -1,0 +1,135 @@
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+ul li{
+  list-style: none;
+}
+[ng-drag] {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.linkstage{
+  text-align: center;
+  background-color: #D3FFCE;
+  width: 50px;
+  height: 50px;
+  padding-left: 1px;
+  border-style: 1px solid #000;
+}
+.item {
+  width: 70px;
+  height: 60px;
+  background: rgba(255, 255, 255,1);
+  color: white;
+  text-align: center;
+  padding-top: 2px;
+  display: inline-block;
+  margin: 5px 0px;
+  cursor: move;
+}
+.codeArea{
+  background-color:  #D3FFCE;
+  padding-left: 100px;
+  margin-left: 100px;
+  margin-right: 200px;
+}
+.itemCode{
+  display: inline-block;
+  width: 220px;
+  height: 50px;
+  margin:0x; 
+}
+ul.draggable-objects:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.draggable-objects li {
+  float: left;
+  display: block;
+  width: 80px;
+  height: 70px;
+ 
+}
+
+[ng-drag].drag-over {
+  border: solid 1px red;
+}
+
+[ng-drag].dragging {
+  opacity: 0.5;
+}
+
+.stage1{
+  
+}
+
+.canvas_area{
+  background-image: url('/imagens/Gramado.png');
+  background-size: 700px 450px;
+  background-color: rgba(241,245,135,0.5);
+  padding-left: 50px;
+ width: 700px;
+ height: 410px;
+ position: absolute;
+  left: 0px;
+  top:65px;
+  
+}
+
+.local_actions{
+   background: rgba(200, 247, 252, 0.5);
+    text-align: center;
+    width: 350px;
+    height: 150px;
+    position: relative;
+    left: 715px;
+    top:10px;
+  
+}
+
+.drop-container {
+  background: rgba(200, 247, 252, 0.5);
+ 
+  width: 350px;
+  height: 200px;
+  padding-top: 5px;
+  padding-left: 10px;
+  display: block;
+  margin: 20px auto;
+  position: relative;
+  left: 350px;
+  top:25px;
+}
+
+.drop-input {
+  width: 200px;
+  height: 40px;
+}
+
+.drag-enter {
+  border: solid 5px blue;
+}
+
+.drop-container span.title {
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 400px;
+  height: 100px;
+  margin-left: -100px;
+  margin-top: -10px;
+}
+
+.drop-container div {
+  position: relative;
+  z-index: 2;
+}
