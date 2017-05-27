@@ -21,16 +21,16 @@
 			girassol.src="/imagens/girassol.png";
 
 			var carnivora1 = new Image();
-			carnivora1.src="/imagens/carnivora.png";
+			carnivora1.src="/imagens/cherrybomb.png";
 
 			var carnivora2 = new Image();
-			carnivora2.src="/imagens/carnivora.png";
+			carnivora2.src="/imagens/cherrybomb.png";
 
 			var carnivora3 = new Image();
-			carnivora3.src="/imagens/carnivora.png";
+			carnivora3.src="/imagens/cherrybomb.png";
 
 			var carnivora4 = new Image();
-			carnivora4.src="/imagens/carnivora.png";
+			carnivora4.src="/imagens/cherrybomb.png";
 			
 			var width = zumbi.width/cols; 
 			var height = zumbi.height/rows; 
@@ -65,7 +65,7 @@
 			var sp3 = new Spritesheet(ctx, carnivora3, srcX, srcY);
 			var sp4 = new Spritesheet(ctx, carnivora4, srcX, srcY);
 
-			var interval = setInterval(draw, 40);
+			var interval = setInterval(draw, 60);
 
 			function moveFrente(){
 				zumbi.src ="/imagens/zumbi.png";
@@ -177,14 +177,20 @@
 
 	function colisao(testeColisao, sprite){
 		if(testeColisao){
-			contapassosX = -40;
+			contapassosX = 10;
 			if(sprite.img == girassol){
 				console.log("girassol");
 			}else{
-			 	sprite.img.src= "/imagens/carnivora21.png";
+			 	sprite.img.src= "/imagens/explosao.png";
+
+			zumbi.src = "/imagens/incenerado.png";
+			zumb = new Spritesheet(ctx, zumbi, srcX, srcY);
+			zumb.desenhar(sprite.x + 50,sprite.y, width, height, srcX, srcY);
+
+				 
 			}
-			 	clearInterval(interval);
-				 interval = setInterval(update_colisao, 60);
+			 	 clearInterval(interval);
+				 interval = setInterval(update_colisao, 70);
 		}
 	}
 
@@ -199,14 +205,14 @@
 				console.log(init[1]);
 			}
 			desenha_oponentes();
-
+			
 				if(contapassosX >= passos)
 				  i++;
 				  
 			}
 
 function desenha_oponentes(){
-
+			
 			girass.desenhar(115,160,85,110, srcX, srcY);
 			sp1.desenhar(330, 150 , 85, 110, srcX, srcY);
 			sp2.desenhar(330, 200 , 85, 110, srcX, srcY);
