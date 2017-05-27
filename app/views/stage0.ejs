@@ -18,8 +18,9 @@
       
         <div id="navbar" class="collapse navbar-collapse">
            <ul class="nav navbar-nav">
-            <li><a href="http://localhost:3000/stage1" class="linkstage">1</a></li>
-            <li><a href="http://localhost:3000/stage2" class="linkstage">2</a></li>
+            <li><a href="http://localhost:3000/stage0" class="linkstage">1</a></li>
+            <li><a href="http://localhost:3000/stage1" class="linkstage">2</a></li>
+            <li><a href="http://localhost:3000/stage2" class="linkstage">3</a></li>
            
        </ul>
          
@@ -57,7 +58,7 @@
       </ul>
 
       <button class="btn btn-primary" ng-click="start_game(<%= stage %>)">Começar</button>
-        <button class="btn btn-primary" ng-click="cylon_start('/cylon1')">Ajuda do Sphero</button>
+      <button class="btn btn-primary" ng-click="cylon_start('/cylon0')">Ajuda do Sphero</button>
     </div>
 
 
@@ -97,7 +98,7 @@
       
 
       <script src="/js/game/spritesheet.js"></script>
-      <script src="/js/game/stage1.js"></script>
+      <script src="/js/game/stage0.js"></script>
        <script src="/js/game/start.js"></script>
 
       <script>

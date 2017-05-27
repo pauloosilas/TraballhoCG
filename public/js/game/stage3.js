@@ -12,7 +12,7 @@
 			var trackRight = 0; 
 			var trackLeft = 1; 
 			
-			var passos = 15;
+			var passos = 23;
 
     		var zumbi = new Image(); 
 			zumbi.src = "/imagens/zumbi.png";
@@ -31,26 +31,7 @@
 
 			var carnivora4 = new Image();
 			carnivora4.src="/imagens/carnivora.png";
-
-			var carnivora5 = new Image();
-			carnivora5.src="/imagens/carnivora.png";
-
-			var carnivora6 = new Image();
-			carnivora6.src="/imagens/carnivora.png";
-
-			var carnivora7 = new Image();
-			carnivora7.src="/imagens/carnivora.png";
-
-			var carnivora8 = new Image();
-			carnivora8.src="/imagens/carnivora.png";
 			
-
-			var carnivora9 = new Image();
-			carnivora9.src="/imagens/carnivora.png";
-
-			var carnivora10 = new Image();
-			carnivora10.src="/imagens/carnivora.png";
-
 			var width = zumbi.width/cols; 
 			var height = zumbi.height/rows; 
 			
@@ -66,8 +47,8 @@
 			var left = false; 
 			var right = true;
 			
-			var speedX = 4;
-			var speedY = 5; 
+			var speedX = 5;
+			var speedY = 4; 
 			var contapassosX = 0;
 			
 			var canvas = document.getElementById('game_area');
@@ -83,15 +64,6 @@
 			var sp2 = new Spritesheet(ctx, carnivora2, srcX, srcY);
 			var sp3 = new Spritesheet(ctx, carnivora3, srcX, srcY);
 			var sp4 = new Spritesheet(ctx, carnivora4, srcX, srcY);
-
-			var sp5 = new Spritesheet(ctx, carnivora5, srcX, srcY);
-			var sp6 = new Spritesheet(ctx, carnivora6, srcX, srcY);
-			var sp7 = new Spritesheet(ctx, carnivora7, srcX, srcY);
-			var sp8 = new Spritesheet(ctx, carnivora8, srcX, srcY);
-
-
-			var sp9 = new Spritesheet(ctx, carnivora9, srcX, srcY);
-			var sp10 = new Spritesheet(ctx, carnivora10, srcX, srcY);
 
 			var interval = setInterval(draw, 40);
 
@@ -193,10 +165,11 @@
 				console.log(init[0]);
 				console.log(init[1]);
 			}
-			
-				desenha_oponentes()
+
 				zumb.desenhar(init[0], init[1], width, height, srcX, srcY);
-				
+
+				desenha_oponentes()
+
 				if(contapassosX >= passos)
 				  i++;
 				  
@@ -234,26 +207,11 @@
 
 function desenha_oponentes(){
 
-			girass.desenhar(50,0,85,110, srcX, srcY);
-			
-			sp1.desenhar(190, 80 , 85, 110, srcX, srcY);
-			sp2.desenhar(260, 140 , 85, 110, srcX, srcY);
-			sp3.desenhar(340, 220 , 85, 110, srcX, srcY);
-			sp4.desenhar(400, 300 , 85, 110, srcX, srcY);
-			
-			sp5.desenhar(325, 300 , 85, 110, srcX, srcY);
-			sp6.desenhar(260, 220 , 85, 110, srcX, srcY);
-			sp7.desenhar(550, 140 , 85, 110, srcX, srcY);
-			sp8.desenhar(480, 80 , 85, 110, srcX, srcY);
-
-			sp5.desenhar(340, 0 , 85, 110, srcX, srcY);
-			sp6.desenhar(410, 80 , 85, 110, srcX, srcY);
-			sp7.desenhar(480, 140 , 85, 110, srcX, srcY);
-			sp8.desenhar(550, 220 , 85, 110, srcX, srcY);
-
-			sp9.desenhar(120, 80 , 85, 110, srcX, srcY);
-			sp10.desenhar(50, 80 , 85, 110, srcX, srcY);
-			
+			girass.desenhar(115,160,85,110, srcX, srcY);
+			sp1.desenhar(330, 150 , 85, 110, srcX, srcY);
+			sp2.desenhar(330, 200 , 85, 110, srcX, srcY);
+			sp3.desenhar(330, 250 , 85, 110, srcX, srcY);
+			sp4.desenhar(330, 300 , 85, 110, srcX, srcY);
 			
 			colisao(girass.colisao(init[0], init[1]), girass);
 		
@@ -262,14 +220,6 @@ function desenha_oponentes(){
 			colisao(sp3.colisao(init[0], init[1]), sp3);
 			colisao(sp4.colisao(init[0], init[1]), sp4);
 
-			colisao(sp5.colisao(init[0], init[1]), sp5);
-			colisao(sp6.colisao(init[0], init[1]), sp6);
-			colisao(sp7.colisao(init[0], init[1]), sp7);
-			colisao(sp8.colisao(init[0], init[1]), sp8);
-
-			colisao(sp9.colisao(init[0], init[1]), sp9);
-			colisao(sp10.colisao(init[0], init[1]), sp10);
-			
 }
 
 }

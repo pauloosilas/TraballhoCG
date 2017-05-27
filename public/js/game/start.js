@@ -5,6 +5,8 @@ function start(vector_fun, n){
  var init = [500,150];
 
  switch(n){
+     case 0: init = [500,150];
+     break;
      case 2: init = [520, 290];
      break;     
  }

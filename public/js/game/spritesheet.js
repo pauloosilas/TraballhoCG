@@ -29,7 +29,7 @@ Spritesheet.prototype = {
    },
 
    colisao: function(posX , posY){
-       if(this.x == posX-50)
+       if(this.x > posX-50 && this.x < posX+50)
         if(this.y > posY-20 && this.y < posY+20){
           return true;
         }

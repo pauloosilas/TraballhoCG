@@ -56,7 +56,8 @@
         </li>
       </ul>
 
-      <button class="btn btn-primary" ng-click="start_game(2)">Começar</button>
+      <button class="btn btn-primary" ng-click="start_game(<%= stage %>)">Começar</button>
+       <button class="btn btn-primary" ng-click="cylon_start('/cylon2')">Ajuda do Sphero</button>
     </div>
 
   
@@ -84,6 +85,7 @@
     <hr/>
     <br/>
     <br/>
+      
     <br/>
 </body>
 

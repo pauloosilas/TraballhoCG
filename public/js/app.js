@@ -1,5 +1,5 @@
 angular.module('app', ['ngDraggable'])
-  .controller('controller', function($scope) {
+  .controller('controller', function($scope, $http) {
 
     $scope.listItems = [{
       name: "Avanca",
@@ -68,6 +68,10 @@ angular.module('app', ['ngDraggable'])
 
     $scope.start_game = function(n){
       start($scope.droppedObjects,n);
+    }
+
+    $scope.cylon_start = function(uri){
+      $http.get(uri);
     }
 
     var onDraggableEvent = function(evt, data) {
