@@ -9,6 +9,8 @@ function start(vector_fun, n){
      break;
      case 2: init = [520, 290];
      break;     
+     case 4: init = [520,15];
+     break;
  }
 
 engine(vector_fun ,init);

@@ -18,6 +18,10 @@ module.exports = function () {
         res.render('stage3', { stage: 1 });
     };
 
+     controller.stage4 = function (req, res) {
+        res.render('stage4', { stage: 4 });
+    };
+
     controller.stage0Cylon = function(req, res){
      
            
