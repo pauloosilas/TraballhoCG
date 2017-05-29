@@ -94,7 +94,9 @@
 			var sp10 = new Spritesheet(ctx, carnivora10, srcX, srcY);
 
 			var interval = setInterval(draw, 40);
-
+//-----------------------------------
+			var i = 0;
+//-----------------------------------
 			function moveFrente(){
 				zumbi.src ="/imagens/zumbi.png";
 				if(contapassosX < passos){
@@ -159,7 +161,63 @@
 				 init[1] = y;
 				
 			}
+			function loop(){
+				
+				let l = [{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 2
+						},
+						
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 2
+						},
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 2
+						},
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 2
+						},
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 }];
 
+				var novo = posicoes.slice(i+1,-1);
+				for(let pi = 0; pi < novo.length; pi++){
+					l.push(novo[pi]);
+				}		
+			    
+				posicoes = l;
+				console.log(posicoes);
+			}
 
 			function updateFrame(n){
 				curFrame = ++curFrame % frameCount; 	
@@ -177,13 +235,13 @@
 					break;
 					case 4: moveTras();
 					break;
+					case 5: loop();
+					break;
 
 				}
-
-				
 				
 			}
-			var i = 0;
+	
 
 		function draw(){
 			if(i < posicoes.length)
@@ -236,7 +294,7 @@ function desenha_oponentes(){
 
 			girass.desenhar(50,0,85,110, srcX, srcY);
 			
-			sp1.desenhar(190, 80 , 85, 110, srcX, srcY);
+			sp1.desenhar(175, 80 , 85, 110, srcX, srcY);
 			sp2.desenhar(260, 140 , 85, 110, srcX, srcY);
 			sp3.desenhar(340, 220 , 85, 110, srcX, srcY);
 			sp4.desenhar(400, 300 , 85, 110, srcX, srcY);
@@ -251,8 +309,8 @@ function desenha_oponentes(){
 			sp7.desenhar(480, 140 , 85, 110, srcX, srcY);
 			sp8.desenhar(550, 220 , 85, 110, srcX, srcY);
 
-			sp9.desenhar(120, 80 , 85, 110, srcX, srcY);
-			sp10.desenhar(50, 80 , 85, 110, srcX, srcY);
+			sp9.desenhar(100, 80 , 85, 110, srcX, srcY);
+			sp10.desenhar(40, 80 , 85, 110, srcX, srcY);
 			
 			
 			colisao(girass.colisao(init[0], init[1]), girass);
