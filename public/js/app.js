@@ -23,13 +23,13 @@ angular.module('app', ['ngDraggable'])
       id : 4
     }, {
       name: "Enguanto",
-      title: "avanca",
+      title: "loop1",
       id : 5
     },
      {
       name: "Faca",
       title: "esquerda",
-      id : 5
+      id : 6
     },];
 
     $scope.droppedObjects = [];

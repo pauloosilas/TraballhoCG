@@ -53,7 +53,7 @@
 			var left = false; 
 			var right = true;
 			
-			var speedX = 5;
+			var speedX = 4;
 			var speedY = 3; 
 			var contapassosX = 0;
 			
@@ -71,11 +71,12 @@
 			var sp3 = new Spritesheet(ctx, oponente3, srcX, srcY);
 			var sp4 = new Spritesheet(ctx, oponente4, srcX, srcY);
 			var sp5 = new Spritesheet(ctx, oponente5, srcX, srcY);
-		
+			var alterado = false;
+
 			var interval = setInterval(draw, 60);
 
-			function moveFrente(){
-				zumbi.src ="/imagens/zumbi.png";
+			function moveFrente(path){
+				zumbi.src = path;
 				if(contapassosX < passos){
 					if(init[0] > 25){
 						x-=speedX; 
@@ -148,13 +149,17 @@
 				srcY = trackRight * height; 
 
 				switch(n){
-					case 1: moveFrente() ;
+					case 1: moveFrente("/imagens/zumbi.png") ;
+							alterado = false;
 					break;
 					case 2: moveDireita();
 					break;
 					case 3: moveEsquerda() ;
 					break;
 					case 4: moveTras();
+					break;
+					case 6: moveFrente("/imagens/balao.png");
+							alterado = true;
 					break;
 
 				}
@@ -173,9 +178,9 @@
 				console.log(init[1]);
 			}
 
-				zumb.desenhar(init[0], init[1], width, height, srcX, srcY);
-
+			
 				desenha_oponentes()
+				zumb.desenhar(init[0], init[1], width, height, srcX, srcY);
 
 				if(contapassosX >= passos)
 				  i++;
@@ -187,17 +192,17 @@
 			contapassosX = 5;
 			if(sprite.img == girassol){
 				console.log("girassol");
-			}else{
-			 	sprite.img.src= "/imagens/explosao.png";
+				clearInterval(interval);
+			}else if(!alterado){
+				sprite.img.src= "/imagens/explosao.png";
 
-			zumbi.src = "/imagens/incenerado.png";
-			zumb = new Spritesheet(ctx, zumbi, srcX, srcY);
-			zumb.desenhar(sprite.x + 50,sprite.y, width, height, srcX, srcY);
-
-				 
+				zumbi.src = "/imagens/incenerado.png";
+				zumb = new Spritesheet(ctx, zumbi, srcX, srcY);
+				zumb.desenhar(sprite.x + 50,sprite.y, width, height, srcX, srcY);
+				 clearInterval(interval);
+				 interval = setInterval(update_colisao, 60); 
 			}
-			 	 clearInterval(interval);
-				 interval = setInterval(update_colisao, 60);
+			 	
 		}
 	}
 
@@ -220,7 +225,7 @@
 
 function desenha_oponentes(){
 			
-			girass.desenhar(40,140,85,110, srcX, srcY);
+			girass.desenhar(80,140,85,110, srcX, srcY);
 		
 			sp1.desenhar(260, 0 , 85, 110, srcX, srcY);
 			sp2.desenhar(260, 70 , 85, 110, srcX, srcY);
