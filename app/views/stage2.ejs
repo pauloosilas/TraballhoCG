@@ -57,24 +57,39 @@
       </ul>
 
       <button class="btn btn-primary" ng-click="start_game(<%= stage %>)">Começar</button>
+        <button id="mostrarFonte" class="btn btn-primary">Codigo</button>
        <button class="btn btn-primary" ng-click="cylon_start('/cylon2')">Ajuda do Sphero</button>
+   
     </div>
 
-  
-    <br>
-    <hr/>
-    <br/>
-    <br/>
-    <br/>
-   <ul class="codeArea">
-     <h3> Mostrar Codigo</h3>
-        <li ng-repeat="obj in droppedObjects">
-          <div style=" background-image: url('./code/{{obj.title}}1.png');            
-        background-repeat: no-repeat;"   class="itemCode"></div>
-        </li>
-      </ul>
+ 
 
+ <div id="areaFonte" class="modal">
+  <div class="modal-content">
+  <div class="codigoFonte">
+      <b>Função Principal()
+      <br/>{</b>
+        <br/>
+        <ul>
+             <li ng-repeat="obj in droppedObjects">
+                 <img src="./code/{{obj.title}}.png"/>
+             </li>
+        </ul>
+         </li>
+        <br/>
+
+      <b>}</b>
+      </div>
   </div>
+
+    <span class="close"></span>
+</div>
+    </div>
+  </div>
+
+  
+
+</div>
 
   <br>
     <hr/>
@@ -85,7 +100,13 @@
     <hr/>
     <br/>
     <br/>
-      
+      <h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+
+
+
+</div>
     <br/>
 </body>
 
@@ -99,13 +120,5 @@
       <script src="/js/game/spritesheet.js"></script>
       <script src="/js/game/stage2.js"></script>
        <script src="/js/game/start.js"></script>
-
-      <script>
-      function load(){
-       
-      }
-      document.onload = load();
-      </script>
-
- 
+       <script src="/js/js/Popup.js"></script>
 </html>

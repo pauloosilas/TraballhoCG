@@ -89,10 +89,11 @@
 			var sp12 = new Spritesheet(ctx, oponente2, srcX, srcY);
 			var sp13 = new Spritesheet(ctx, oponente3, srcX, srcY);
 		
+			var alterado = false;
 			var interval = setInterval(draw, 30);
 
-			function moveFrente(){
-				zumbi.src ="/imagens/zumbi.png";
+			function moveFrente(path){
+				zumbi.src = path;
 				if(contapassosX < passos){
 					if(init[0] > 0){
 						x-=speedX; 
@@ -108,8 +109,8 @@
 				
 			}
 		
-			function moveDireita(){
-
+			function moveDireita(path){
+			zumbi.src = path;
 				 if(contapassosX < passos){
 					 if(init[1] > 5){
 						y -= speedY;
@@ -124,8 +125,8 @@
 				
 			}
 
-				function moveTras(){
-				zumbi.src ="/imagens/zumbi2.png";
+				function moveTras(path){
+				zumbi.src = path;
 				if(contapassosX < passos){
 					if(init[0] < 520){
 						x+=speedX; 
@@ -140,8 +141,8 @@
 						
 			}
 		
-			function moveEsquerda(){
-
+			function moveEsquerda(path){
+				zumbi.src = path;
 				 if(contapassosX < passos){
 					if(init[1] < 280){
 						y += speedY;
@@ -165,18 +166,26 @@
 				srcY = trackRight * height; 
 
 				switch(n){
-					case 1: moveFrente() ;
+					case 1: moveFrente("/imagens/zumbi.png") ;
+							alterado = false;
+					break;	
+					case 2: moveDireita("/imagens/zumbi.png");
+							alterado = false;
 					break;
-					case 2: moveDireita();
+					case 3: moveEsquerda("/imagens/zumbi.png") ;
+							alterado = false;
 					break;
-					case 3: moveEsquerda() ;
+					case 4: moveTras("/imagens/zumbi2.png");
+							alterado = false;
 					break;
-					case 4: moveTras();
+					case 5: moveTras("/imagens/balao2.png");
+							alterado = true;
+					break;
+					case 6: moveFrente("/imagens/balao.png");
+							alterado = true;
 					break;
 
 				}
-
-				
 				
 			}
 			var i = 0;
@@ -198,6 +207,9 @@
 				  i++;
 				  
 			}
+	function t(){
+     modal.style.display = "block";
+}
 
 	function colisao(testeColisao, sprite){
 		if(testeColisao){
@@ -206,39 +218,49 @@
 		if(sprite.img == girassol){
 				console.log("girassol");
 				init[0]=1000;
+				t();
 				clearInterval(interval);
 		}else{
+			if(!alterado)
 			if(sprite.img == oponente1){
 					sprite.img.src= "/imagens/explosao.png";
 					zumbi.src = "/imagens/incenerado.png";
 					zumb = new Spritesheet(ctx, zumbi, srcX, srcY);
 					zumb.desenhar(sprite.x + 50,sprite.y, width, height, srcX, srcY);
+					 clearInterval(interval);
+				 interval = setInterval(update_colisao, 50);
 			}else{
+				if(!alterado)
 				 if(sprite.img == oponente2){
 				
 					sprite.img.src= "/imagens/explosao.png";
 					zumbi.src = "/imagens/incenerado.png";
 					zumb = new Spritesheet(ctx, zumbi, srcX, srcY);
 					zumb.desenhar(sprite.x - 60,sprite.y, width, height, srcX, srcY);
-				}
+					 clearInterval(interval);
+				 interval = setInterval(update_colisao, 50);
+			}
 				else  if(sprite.img == oponente3){
 				
 					sprite.img.src= "/imagens/explosao.png";
 					zumbi.src = "/imagens/incenerado.png";
 					zumb = new Spritesheet(ctx, zumbi, srcX, srcY);
 					zumb.desenhar(sprite.x + 60,sprite.y, width, height, srcX, srcY);
-				}
+					 clearInterval(interval);
+				 interval = setInterval(update_colisao, 50); 
+			}
 			
 			else{
 			 	sprite.img.src= "/imagens/carnivora21.png";
+				  clearInterval(interval);
+				 interval = setInterval(update_colisao, 50);
 			}
 		
 				 
 		}
 	}
 	
-			 	 clearInterval(interval);
-				 interval = setInterval(update_colisao, 50);
+			 	
 		}
 	}
 

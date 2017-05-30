@@ -4,25 +4,25 @@ angular.module('app', ['ngDraggable'])
 
 
     $scope.listItems = [{
-      name: "Avanca",
+      name: "Avanca()",
       title: "avanca",
       id : 1
     },
      {
-      name: "Esquerda",
-      title: "esquerda",
+      name: "IF(Plantas Afrente) Vá Para Direita",
+      title: "direita",
       id : 2
     }, {
-      name: "Direita",
-      title: "direita",
+      name: "IF(Plantas Afrente) Vá Para Esquerda",
+      title: "esquerda",
       id : 3
     },
      {
-      name: "Volta",
+      name: "Retorne()",
       title: "voltar",
       id : 4
     }, {
-      name: "Enguanto",
+      name: "Enguanto Não Chegar Faça Isso!",
       title: "loop1",
       id : 5
     },
