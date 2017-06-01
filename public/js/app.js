@@ -30,7 +30,16 @@ angular.module('app', ['ngDraggable'])
       name: "Faca",
       title: "esquerda",
       id : 6
-    },];
+    }, {
+      name: "Metodo()",
+      title: "b_frente",
+      id : 7
+    },
+     {
+      name: "Metodo()",
+      title: "b_voltar",
+      id : 8
+    }];
 
     $scope.droppedObjects = [];
     $scope.input = {};

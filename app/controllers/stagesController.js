@@ -5,7 +5,7 @@ var Cylon = require('cylon');
 module.exports = function () {
     var controller = {};
     controller.stage0 = function (req, res) {
-        res.render("stage0", { stage: 0 });
+        res.render("stage0", { stage: 0 , msg: "Seu codigo será inicializado na Função Principal. Arraste uma instrução para seguir em frente!"});
     }
     controller.stage1 = function (req, res) {
         res.render('stage1', { stage: 1 });

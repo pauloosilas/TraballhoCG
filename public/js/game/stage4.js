@@ -90,7 +90,7 @@
 			var sp13 = new Spritesheet(ctx, oponente3, srcX, srcY);
 		
 			var alterado = false;
-			var interval = setInterval(draw, 30);
+			var interval = setInterval(draw, 40);
 
 			function moveFrente(path){
 				zumbi.src = path;
@@ -185,6 +185,14 @@
 							alterado = true;
 					break;
 
+					case 7: moveFrente("/imagens/balao.png");
+							alterado = true;
+					break;
+
+					case 8: moveTras("/imagens/balao2.png");
+							alterado = true;
+					break;
+
 				}
 				
 			}
@@ -213,11 +221,10 @@
 
 	function colisao(testeColisao, sprite){
 		if(testeColisao){
-			contapassosX = 0;
+			contapassosX = -10;
 		
 		if(sprite.img == girassol){
 				console.log("girassol");
-				init[0]=1000;
 				t();
 				clearInterval(interval);
 		}else{

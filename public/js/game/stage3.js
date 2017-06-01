@@ -73,7 +73,7 @@
 			var sp5 = new Spritesheet(ctx, oponente5, srcX, srcY);
 			var alterado = false;
 
-			var interval = setInterval(draw, 60);
+			var interval = setInterval(draw, 50);
 
 			function moveFrente(path){
 				zumbi.src = path;
@@ -108,8 +108,8 @@
 				
 			}
 
-				function moveTras(){
-				zumbi.src ="/imagens/zumbi2.png";
+				function moveTras(path){
+				zumbi.src =path;
 				if(contapassosX < passos){
 					if(init[0] < 520){
 						x+=speedX; 
@@ -153,12 +153,19 @@
 							alterado = false;
 					break;
 					case 2: moveDireita();
+							alterado = false;
 					break;
 					case 3: moveEsquerda() ;
+							alterado = false;
 					break;
 					case 4: moveTras();
+							alterado = false;
 					break;
-					case 6: moveFrente("/imagens/balao.png");
+					case 7: moveFrente("/imagens/balao.png");
+							alterado = true;
+					break;
+
+					case 8: moveTras("/imagens/balao2.png");
 							alterado = true;
 					break;
 
@@ -168,6 +175,11 @@
 				
 			}
 			var i = 0;
+
+	function t(){
+    	 modal.style.display = "block";
+	}
+
 
 		function draw(){
 			if(i < posicoes.length)
@@ -189,18 +201,21 @@
 
 	function colisao(testeColisao, sprite){
 		if(testeColisao){
-			contapassosX = 5;
+			contapassosX = 0;
 			if(sprite.img == girassol){
-				console.log("girassol");
 				clearInterval(interval);
+				t();
+				
 			}else if(!alterado){
 				sprite.img.src= "/imagens/explosao.png";
-
+			    clearInterval(interval);
+				
 				zumbi.src = "/imagens/incenerado.png";
 				zumb = new Spritesheet(ctx, zumbi, srcX, srcY);
 				zumb.desenhar(sprite.x + 50,sprite.y, width, height, srcX, srcY);
-				 clearInterval(interval);
+				
 				 interval = setInterval(update_colisao, 60); 
+				
 			}
 			 	
 		}
@@ -225,7 +240,7 @@
 
 function desenha_oponentes(){
 			
-			girass.desenhar(80,140,85,110, srcX, srcY);
+			girass.desenhar(50,140,85,110, srcX, srcY);
 		
 			sp1.desenhar(260, 0 , 85, 110, srcX, srcY);
 			sp2.desenhar(260, 70 , 85, 110, srcX, srcY);

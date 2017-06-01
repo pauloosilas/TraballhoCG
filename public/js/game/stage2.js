@@ -93,7 +93,7 @@
 			var sp9 = new Spritesheet(ctx, carnivora9, srcX, srcY);
 			var sp10 = new Spritesheet(ctx, carnivora10, srcX, srcY);
 
-			var interval = setInterval(draw, 40);
+			var interval = setInterval(draw, 30);
 //-----------------------------------
 			var i = 0;
 //-----------------------------------
@@ -242,7 +242,9 @@
 				
 			}
 	
-
+	function t(){
+    	 modal.style.display = "block";
+	}
 		function draw(){
 			if(i < posicoes.length)
 				updateFrame(posicoes[i].id);
@@ -265,6 +267,8 @@
 			contapassosX = -40;
 			if(sprite.img == girassol){
 				console.log("girassol");
+				clearInterval(interval);
+				t();
 			}else{
 			 	sprite.img.src= "/imagens/carnivora21.png";
 			}
@@ -292,7 +296,7 @@
 
 function desenha_oponentes(){
 
-			girass.desenhar(50,0,85,110, srcX, srcY);
+			girass.desenhar(200,0,85,110, srcX, srcY);
 			
 			sp1.desenhar(175, 80 , 85, 110, srcX, srcY);
 			sp2.desenhar(260, 140 , 85, 110, srcX, srcY);

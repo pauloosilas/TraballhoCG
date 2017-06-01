@@ -157,6 +157,11 @@
 			}
 			var i = 0;
 
+	function t(){
+    		 modal.style.display = "block";
+	}
+
+
 		function draw(){
 			if(i < posicoes.length)
 				updateFrame(posicoes[i].id);
@@ -180,6 +185,8 @@
 			contapassosX = -40;
 			if(sprite.img == girassol){
 				console.log("girassol");
+				clearInterval(interval);
+				t();
 			}else{
 			 	sprite.img.src= "/imagens/carnivora21.png";
 			}
