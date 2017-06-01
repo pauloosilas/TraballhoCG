@@ -46,7 +46,7 @@
     <div ng-drop="true" ng-drop-success="onDropComplete($data,$event)" class="drop-container">
       
       <div ng-repeat="obj in droppedObjects" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragComplete($data,$event)" 
-      class="item" style=" background-image: url('./icones/{{obj.title}}.png');           
+      class="item" style="background-image: url('./icones/{{obj.title}}.png');           
         background-repeat: no-repeat;  background-size:55px 55px;"  >
       
       </div>
@@ -56,7 +56,7 @@
      <div class="local_actions" ng-drop="true" ng-drop-success="onDropCompleteRemove($data,$event)">
       <ul class="draggable-objects">
         <li ng-repeat="obj in listItems">
-          <div ng-drag="true" ng-drag-data="obj" style=" background-image: url('./icones/{{obj.title}}.png');           
+          <div ng-drag="true" ng-drag-data="obj"   style="background-image: url('./icones/{{obj.title}}.png');           
         background-repeat: no-repeat; background-size:55px 55px;"   data-allow-transform="true" class="item"></div>
         </li>
       </ul>
@@ -69,10 +69,9 @@
 
   
     <br>
-    <hr/>
     <br/>
     
-    <br> Necessárias: 1, Feitas: {{droppedObjects.length}}
+    <br> <div class="Jogadas">Necessárias: 1, Feitas: {{droppedObjects.length}}</div>
  <br/>
   <div id="areaFonte" class="modal">
   <div class="modal-content">

@@ -353,6 +353,13 @@ function loop_voltar(){
 							alterado = true;
 					break;
 
+					case 10: moveFrente("/imagens/pulapula1.png");
+					alterado = true;
+					break;
+					case 11: moveTras("/imagens/pulapula2.png");
+					alterado = true;
+					break;
+
 				}
 				
 			}

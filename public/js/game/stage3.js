@@ -165,7 +165,11 @@
 							alterado = true;
 					break;
 
-					case 9: moveTras("/imagens/balao2.png");
+					case 9: moveTras("/imagens/balao.png");
+							alterado = true;
+					break;
+					
+					case 10: moveFrente("/imagens/pulapula1.png");
 							alterado = true;
 					break;
 

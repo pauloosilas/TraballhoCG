@@ -45,6 +45,16 @@ angular.module('app', ['ngDraggable'])
       name: "Metodo()",
       title: "b_voltar",
       id : 9
+    },
+    {
+      name: "Metodo()",
+      title: "pula",
+      id : 10
+    },
+     {
+      name: "Metodo()",
+      title: "pula2",
+      id : 11
     }];
 
     $scope.droppedObjects = [];
