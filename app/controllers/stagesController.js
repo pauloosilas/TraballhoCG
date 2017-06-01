@@ -44,13 +44,10 @@ module.exports = function () {
                 });
 
                 after(100, function () {
-                    my.sphero.color(0xFFFF00);
+                    my.sphero.color(0xADD8E6);
                 });
 
-                after(500, function () {
-                    my.sphero.color(0xFF5000);
-                });
-
+               
 
                 after(2000, function () {
                     my.sphero.roll(50, 0);
@@ -62,9 +59,7 @@ module.exports = function () {
                     my.sphero.roll(50, 60);
                 });
 
-                after(8000, function () {
-                    my.sphero.color(0xFFFF00);
-                });
+               
 
             }
         }).start();
@@ -92,12 +87,9 @@ module.exports = function () {
                 });
 
                 after(100, function () {
-                    my.sphero.color(0xFFFF00);
+                    my.sphero.color(0x00FFFF);
                 });
 
-                after(500, function () {
-                    my.sphero.color(0xFF5000);
-                });
 
 
                 after(2000, function () {
@@ -110,9 +102,7 @@ module.exports = function () {
                     my.sphero.roll(50, 60);
                 });
 
-                after(8000, function () {
-                    my.sphero.color(0xFFFF00);
-                });
+               
 
             }
         }).start();
@@ -137,6 +127,9 @@ module.exports = function () {
                 });
                 after(2000, function () {
                     my.sphero.finishCalibration();
+                });
+               after(3000, function () {
+                    my.sphero.color(0xFF0000);
                 });
                 after(4000, function () {
                     my.sphero.roll(0, 0);
@@ -169,6 +162,104 @@ module.exports = function () {
                    my.sphero.roll(0, 180);
                 });
 
+            }
+        }).start();
+
+    }
+
+      controller.stage3Cylon = function(req, res){
+        
+        Cylon.robot({
+            connections: {
+                sphero: { adaptor: 'sphero', port: '/dev/rfcomm0' }
+            },
+
+            devices: {
+                sphero: { driver: 'sphero' }
+            },
+
+            work: function (my) {
+
+                after(1000, function () {
+                    my.sphero.startCalibration();
+                });
+                after(2000, function () {
+                    my.sphero.finishCalibration();
+                });
+             
+                after(3000, function () {
+                    my.sphero.roll(60, 0);
+                });
+
+
+                after(4000, function () {
+                    my.sphero.roll(60, 0);
+                });
+
+                  after(5000, function () {
+                    my.sphero.color(0x00008B);
+                });
+
+                after(7000, function () {
+                    my.sphero.roll(60, 180);
+                });
+               
+            }
+        }).start();
+
+    }
+
+  controller.stage4Cylon = function(req, res){
+        
+        Cylon.robot({
+            connections: {
+                sphero: { adaptor: 'sphero', port: '/dev/rfcomm0' }
+            },
+
+            devices: {
+                sphero: { driver: 'sphero' }
+            },
+
+            work: function (my) {
+
+               after(1000, function () {
+                    my.sphero.color(0x7B68EE);
+                });
+
+                 after(2000, function () {
+                    my.sphero.color(0x00FA9A);
+                });
+
+
+                 after(3000, function () {
+                    my.sphero.color(0xDAA520);
+                });
+
+                 after(4000, function () {
+                    my.sphero.color(0x48D1CC);
+                });
+
+                 after(5000, function () {
+                    my.sphero.color(0xDAA520);
+                });
+
+                   after(6000, function () {
+                    my.sphero.color(0x00FA9A);
+                });
+
+                 after(7000, function () {
+                    my.sphero.color(0xADD8E6);
+                });
+
+                 after(8000, function () {
+                    my.sphero.color(0xFF8C00);
+                });
+                  after(8000, function () {
+                    my.sphero.color(0xADD8E6);
+                });
+
+
+               
             }
         }).start();
 

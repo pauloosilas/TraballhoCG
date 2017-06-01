@@ -46,7 +46,7 @@
       
       <div ng-repeat="obj in droppedObjects" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragComplete($data,$event)" 
       class="item" style=" background-image: url('./icones/{{obj.title}}.png');           
-        background-repeat: no-repeat;  background-size:55px 55px;"  >
+        background-repeat: no-repeat;  background-size:55px 55px;  background-color:{{obj.cor}}"  >
       
       </div>
     </div>
@@ -56,13 +56,13 @@
       <ul class="draggable-objects">
         <li ng-repeat="obj in listItems">
           <div ng-drag="true" ng-drag-data="obj" style=" background-image: url('./icones/{{obj.title}}.png');           
-        background-repeat: no-repeat; background-size:55px 55px;"   data-allow-transform="true" class="item"></div>
+        background-repeat: no-repeat; background-size:55px 55px; background-color:{{obj.cor}}"   data-allow-transform="true" class="item"></div>
         </li>
       </ul>
 
       <button class="btn btn-primary" ng-click="start_game(<%= stage %>)">Começar</button>
       <button id="mostrarFonte" class="btn btn-primary">Codigo</button>
-      <button class="btn btn-primary" ng-click="cylon_start('/cylon2')">Ajuda do Sphero</button>
+      <button class="btn btn-primary" ng-click="cylon_start('/cylon3')">Ajuda do Sphero</button>
     </div>
 
   

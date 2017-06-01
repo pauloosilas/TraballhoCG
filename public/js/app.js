@@ -6,54 +6,65 @@ angular.module('app', ['ngDraggable'])
     $scope.listItems = [{
       name: "Avanca()",
       title: "avanca",
+      cor: "#ADD8E6",
       id : 1
     },
      {
       name: "IF(Plantas Afrente) Vá Para Direita",
       title: "direita",
+       cor: "#00FFFF",
       id : 2
     }, {
       name: "IF(Plantas Afrente) Vá Para Esquerda",
       title: "esquerda",
+       cor: "#00FA9A",
       id : 3
     },
      {
       name: "Retorne()",
       title: "voltar",
+      cor: "#DAA520",
       id : 4
     }, {
       name: "Enguanto Não Chegar Faça Isso!",
       title: "loop1",
+      cor: "#FF0000",
       id : 5
     },
      {
       name: "Enguanto Não Chegar Faça Isso!",
       title: "avance_ate",
+      cor: "#7B68EE",
       id : 6
     },
      {
       name: "Enguanto Não Chegar Faça Isso!",
       title: "voltar_ate",
+      cor: "#BA55D3",
       id : 7
     },
      {
       name: "Metodo()",
       title: "b_frente",
+      cor: "#00008B",
       id : 8
     },
      {
       name: "Metodo()",
       title: "b_voltar",
+      cor: "#48D1CC",
       id : 9
     },
     {
       name: "Metodo()",
       title: "pula",
+      cor: "#FF8C00",
       id : 10
     },
      {
       name: "Metodo()",
       title: "pula2",
+      cor: "#FFFF00",
       id : 11
     }];
 

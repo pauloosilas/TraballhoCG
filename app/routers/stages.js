@@ -12,7 +12,8 @@ module.exports = function(app){
     app.get('/cylon0',stages.stage0Cylon);
     app.get('/cylon1',stages.stage1Cylon);
     app.get('/cylon2',stages.stage2Cylon);
-    
+    app.get('/cylon3',stages.stage3Cylon);
+    app.get('/cylon4',stages.stage4Cylon);
 
     app.get('/sucess', stages.sucess);
     
