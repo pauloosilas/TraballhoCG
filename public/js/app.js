@@ -27,18 +27,24 @@ angular.module('app', ['ngDraggable'])
       id : 5
     },
      {
-      name: "Faca",
-      title: "esquerda",
+      name: "Enguanto Não Chegar Faça Isso!",
+      title: "avance_ate",
       id : 6
-    }, {
-      name: "Metodo()",
-      title: "b_frente",
+    },
+     {
+      name: "Enguanto Não Chegar Faça Isso!",
+      title: "voltar_ate",
       id : 7
     },
      {
       name: "Metodo()",
-      title: "b_voltar",
+      title: "b_frente",
       id : 8
+    },
+     {
+      name: "Metodo()",
+      title: "b_voltar",
+      id : 9
     }];
 
     $scope.droppedObjects = [];

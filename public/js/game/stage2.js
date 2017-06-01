@@ -93,7 +93,7 @@
 			var sp9 = new Spritesheet(ctx, carnivora9, srcX, srcY);
 			var sp10 = new Spritesheet(ctx, carnivora10, srcX, srcY);
 
-			var interval = setInterval(draw, 30);
+			var interval = setInterval(draw, 40);
 //-----------------------------------
 			var i = 0;
 //-----------------------------------
@@ -161,7 +161,7 @@
 				 init[1] = y;
 				
 			}
-			function loop(){
+			function loop_while(){
 				
 				let l = [{
       				    	name: "Avanca",
@@ -210,7 +210,7 @@
      					    id : 1
    						 }];
 
-				var novo = posicoes.slice(i+1,-1);
+				var novo = posicoes.slice(i+1,posicoes.length);
 				for(let pi = 0; pi < novo.length; pi++){
 					l.push(novo[pi]);
 				}		
@@ -235,7 +235,7 @@
 					break;
 					case 4: moveTras();
 					break;
-					case 5: loop();
+					case 5: loop_while();
 					break;
 
 				}

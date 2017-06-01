@@ -158,6 +158,163 @@
 			}
 
 
+
+
+
+			function loop_while(){
+				
+				let l = [{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 2
+						},
+						
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 2
+						},
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 2
+						},
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 2
+						},
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 }];
+
+				var novo = posicoes.slice(i+1,posicoes.length);
+				for(let pi = 0; pi < novo.length; pi++){
+					l.push(novo[pi]);
+				}		
+			    
+				posicoes = l;
+				console.log(posicoes);
+			}
+
+function loop_voltar(){
+				
+				let l = [{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 4
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 4
+						},
+						
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 4
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 4
+						},
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 4
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 4
+						},
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 4
+   						 },
+     					{
+							name: "Esquerda",
+							title: "esquerda",
+							id : 4
+						},
+						{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 4
+   						 }];
+
+				var novo = posicoes.slice(i+1,posicoes.length);
+				for(let pi = 0; pi < novo.length; pi++){
+					l.push(novo[pi]);
+				}		
+			    
+				posicoes = l;
+				console.log(posicoes);
+			}
+
+			function loop_avanca(){
+				
+				let l = [{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 },
+							{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 },
+							{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 },
+							{
+      				    	name: "Avanca",
+     					    title: "avanca",
+     					    id : 1
+   						 }
+     					];
+
+				var novo = posicoes.slice(i+1,posicoes.length);
+				for(let pi = 0; pi < novo.length; pi++){
+					l.push(novo[pi]);
+				}		
+			    
+				posicoes = l;
+				console.log(posicoes);
+			}
+
+		
+		
+
+
+
 			function updateFrame(n){
 				curFrame = ++curFrame % frameCount; 	
 				ctx.clearRect(0,0,ctx.canvas.width,ctx.canvas.height);
@@ -178,18 +335,21 @@
 					case 4: moveTras("/imagens/zumbi2.png");
 							alterado = false;
 					break;
-					case 5: moveTras("/imagens/balao2.png");
-							alterado = true;
+					case 5: loop_while();
+							alterado = false;
 					break;
-					case 6: moveFrente("/imagens/balao.png");
+					case 6: loop_avanca();
+							alterado = false;
+					break;
+					case 7: loop_voltar();
+							alterado = false;
+					break;
+
+					case 8: moveFrente("/imagens/balao.png");
 							alterado = true;
 					break;
 
-					case 7: moveFrente("/imagens/balao.png");
-							alterado = true;
-					break;
-
-					case 8: moveTras("/imagens/balao2.png");
+					case 9: moveTras("/imagens/balao2.png");
 							alterado = true;
 					break;
 

@@ -5,21 +5,21 @@ var Cylon = require('cylon');
 module.exports = function () {
     var controller = {};
     controller.stage0 = function (req, res) {
-        res.render("stage0", { stage: 0 , msg: "Seu codigo será inicializado na Função Principal. Arraste uma instrução para seguir em frente!"});
+        res.render("stage0", { stage: 0 , msg: " Seu codigo será inicializado na Função Principal. Arraste uma instrução para seguir em frente!"});
     }
     controller.stage1 = function (req, res) {
-        res.render('stage1', { stage: 1 });
+        res.render('stage1', { stage: 1,msg: " IF( encontrar Plantas afrente) { faça um DESVIO! }" });
     };
     controller.stage2 = function (req, res) {
-        res.render('stage2', { stage: 2 });
+        res.render('stage2', { stage: 2, msg:" Evite Repetir codigo, faça um loop aqui!"  });
     };
 
      controller.stage3 = function (req, res) {
-        res.render('stage3', { stage: 1 });
+        res.render('stage3', { stage: 1, msg:" Você vai precisar de um METODO diferente para passar pelas plantas aqui!" });
     };
 
      controller.stage4 = function (req, res) {
-        res.render('stage4', { stage: 4 });
+        res.render('stage4', { stage: 4, msg: " Faça coisas mais complexas" });
     };
 
     controller.stage0Cylon = function(req, res){

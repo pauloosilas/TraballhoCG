@@ -25,6 +25,8 @@
             <li><a href="http://localhost:3000/stage4" class="linkstage">5</a></li>
             
        </ul>
+         <div class="Msg" href="#"> <img src="./imagens/avatar.png"/><%=msg %>
+        </div>
          
         </div>
       </div>
@@ -34,7 +36,6 @@
 <body ng-app="app">
   <div ng-controller="controller">
 
- <br/>
 
  <div  class="canvas_area" >
   <canvas id="game_area" width="700" height="450" class="stage1"></canvas>
@@ -67,9 +68,9 @@
     <br>
     <hr/>
     <br/>
-    <br/>
-    <br/>
-   
+    
+    <br> Necessárias: 9, Feitas: {{droppedObjects.length}}
+ <br/>
 
  <div id="areaFonte" class="modal">
   <div class="modal-content">
@@ -86,6 +87,10 @@
         <br/>
 
       <b>}</b>
+
+     <b><br/> Função Passar_Por_Cima(Objeto)<br>{
+       <br/> Passando...;
+      <br>}<br></b>
       </div>
         <a href="http://localhost:3000/stage4" class="linkstage">Próximo >></a>
 
